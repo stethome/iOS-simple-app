@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_simple_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="R8a-mc-WuC">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O21-ae-6wO">
+                                <rect key="frame" x="16" y="37" width="315" height="2"/>
+                            </progressView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jn-PC-pLD">
+                                <rect key="frame" x="16" y="56" width="343" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IYz-tQ-epB">
+                                <rect key="frame" x="129" y="365" width="117" height="29"/>
+                                <segments>
+                                    <segment title="FRONT"/>
+                                    <segment title="BACK"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bodySideChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="WgG-kq-dZa"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="too loud" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZA-sh-QLM">
+                                <rect key="frame" x="58" y="368.5" width="63" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rRM-fl-tIN">
+                                <rect key="frame" x="102.5" y="409" width="170.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POINTS ANALYSIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv3-VJ-Tgu">
+                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-pA-30k">
+                                        <rect key="frame" x="150.5" y="0.0" width="20" height="20"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em6-o1-HvY">
+                                <rect key="frame" x="120" y="608" width="135" height="30"/>
+                                <state key="normal" title="END EXAMINATION"/>
+                                <connections>
+                                    <action selector="endExaminationTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtk-M5-pcM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R8a-mc-WuC" secondAttribute="trailing" constant="16" id="5ig-44-nIO"/>
+                            <constraint firstItem="O21-ae-6wO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5ru-Cz-NGt"/>
+                            <constraint firstItem="kZA-sh-QLM" firstAttribute="centerY" secondItem="IYz-tQ-epB" secondAttribute="centerY" id="6Ty-HD-FQk"/>
+                            <constraint firstItem="4Jn-PC-pLD" firstAttribute="top" secondItem="R8a-mc-WuC" secondAttribute="bottom" constant="8" id="BF7-dJ-Mnh"/>
+                            <constraint firstItem="IYz-tQ-epB" firstAttribute="top" secondItem="4Jn-PC-pLD" secondAttribute="bottom" constant="42" id="BT6-YB-0Rv"/>
+                            <constraint firstItem="4Jn-PC-pLD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Oj6-1e-3SR"/>
+                            <constraint firstItem="R8a-mc-WuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Pu1-3F-PoS"/>
+                            <constraint firstItem="em6-o1-HvY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a0T-ZH-hiB"/>
+                            <constraint firstItem="kZA-sh-QLM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="dg4-tH-fgj"/>
+                            <constraint firstItem="IYz-tQ-epB" firstAttribute="leading" secondItem="kZA-sh-QLM" secondAttribute="trailing" constant="8" id="gMj-2p-0Tb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="em6-o1-HvY" secondAttribute="bottom" constant="29" id="hho-7O-yMD"/>
+                            <constraint firstItem="4Jn-PC-pLD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="iLT-c0-LBI"/>
+                            <constraint firstItem="IYz-tQ-epB" firstAttribute="centerX" secondItem="4Jn-PC-pLD" secondAttribute="centerX" id="jYT-AE-2n8"/>
+                            <constraint firstItem="rRM-fl-tIN" firstAttribute="top" secondItem="IYz-tQ-epB" secondAttribute="bottom" constant="16" id="k6m-X2-LiX"/>
+                            <constraint firstItem="rRM-fl-tIN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="q32-7E-ZJD"/>
+                            <constraint firstItem="R8a-mc-WuC" firstAttribute="leading" secondItem="O21-ae-6wO" secondAttribute="trailing" constant="8" id="q8w-mB-eqc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Jn-PC-pLD" secondAttribute="trailing" constant="16" id="rMg-fC-dqJ"/>
+                            <constraint firstItem="O21-ae-6wO" firstAttribute="centerY" secondItem="R8a-mc-WuC" secondAttribute="centerY" id="v9H-p4-sbJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodySideControl" destination="IYz-tQ-epB" id="2Mj-nL-vC5"/>
+                        <outlet property="deviceSearchingIndicator" destination="R8a-mc-WuC" id="CEO-5a-YXl"/>
+                        <outlet property="examinationViewContainer" destination="4Jn-PC-pLD" id="X8A-XV-vq7"/>
+                        <outlet property="pointsAnalysisIndicatorView" destination="rRM-fl-tIN" id="FYj-UP-qLL"/>
+                        <outlet property="tooLoudLabel" destination="kZA-sh-QLM" id="LmB-TU-3ub"/>
+                        <outlet property="updateProgressView" destination="O21-ae-6wO" id="Suw-B0-UD3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
