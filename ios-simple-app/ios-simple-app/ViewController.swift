@@ -12,12 +12,13 @@ import StethoMeSDK
 class ViewController: UIViewController {
     
     @IBOutlet weak var deviceSearchingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var recordingStateContainer: UIView!
     @IBOutlet weak var examinationViewContainer: UIView!
     @IBOutlet weak var updateProgressView: UIProgressView!
-    @IBOutlet weak var bodySideControl: UISegmentedControl!
-    @IBOutlet weak var tooLoudLabel: UILabel!
     @IBOutlet weak var pointsAnalysisIndicatorView: UIStackView!
+    weak var recordingStateView: SMRecordingStateView?
     weak var examinationView: SMExaminationView?
+    private let invalidPointsSummaryView = SMInvalidPointsSummaryView.fromNib()
     
     var smManager: SMManager!
     var smExamination: SMExamination?
@@ -42,19 +43,15 @@ class ViewController: UIViewController {
         guard smExamination == nil else { return }
         let disclaimer = SMDisclaimer(locale: Locale.current) //normally disclaimer have to be shown to user
         disclaimer.getItemsToAccept().forEach({ $0.isAccepted = true })
-        let patient = SMPatient(age: patientAge, sex: .male, weight: 80)
+        let patient = SMPatient(age: Float(patientAge), sex: .male, weight: 80)
         
         guard let examination = smManager.startExamination(delegate: self, options: [], disclaimer: disclaimer, patient: patient) else {
             print("Error: did not get SMExamination object!")
             return
         }
         smExamination = examination
-        examinationView?.configure(with: examination)
-        examination.bodySideChangedHandler.addEventListener(SMAction<SMBodySide>(action: { [weak self] newBodySide in
-            DispatchQueue.main.async { [weak self] in
-                self?.bodySideControl.selectedSegmentIndex = newBodySide.rawValue
-            }
-        }))
+        examinationView?.configure(with: examination, locale: Locale.current, customButton: nil)
+        recordingStateView?.configure(withExamination: examination, locale: Locale.current)
     }
     
     func handleEndExamination() {
@@ -68,7 +65,7 @@ class ViewController: UIViewController {
                 if invalidPoints.count == 0 {
                     self?.showSendingSuccess()
                 } else {
-                    self?.showThereAreInvalidPoints()
+                    self?.handleShowingInvalidPoints(invalidPoints)
                 }
             case .failure(let error):
                 self?.showSendingFailure()
@@ -97,31 +94,38 @@ class ViewController: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
-    func showThereAreInvalidPoints() {
-        let recordAgainAction = UIAlertAction(title: "Record again", style: .default) { [weak self] _ in
+    func handleShowingInvalidPoints(_ invalidPoints: [(SMExaminationPoint, SMExaminationPointFailedReason)]) {
+        invalidPointsSummaryView.configure(withInvalidPoints: invalidPoints, locale: Locale.current)
+        invalidPointsSummaryView.embed(inView: self.view)
+        self.view.bringSubviewToFront(invalidPointsSummaryView)
+        
+        invalidPointsSummaryView.yesTappedHandler = { [weak self] in
             self?.smExamination?.recordInvalidPointsAgain()
+            self?.hideInvalidPointsSummaryView()
         }
-        let endExamination = UIAlertAction(title: "End examination", style: .default) { [weak self] _ in
-            self?.smExamination?.closeExamination(removeFiles: true)
+        invalidPointsSummaryView.noTappedHandler = { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
                 self?.showSendingSuccess()
             })
         }
-        let alertVC = UIAlertController(title: "Invalid points recorded", message: "There are invalid points. Record them again?", preferredStyle: .alert)
-        alertVC.addAction(recordAgainAction)
-        alertVC.addAction(endExamination)
-        present(alertVC, animated: true, completion: nil)
+        
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.invalidPointsSummaryView.alpha = 1.0
+        }, completion: nil)
+    }
+    
+    func hideInvalidPointsSummaryView() {
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.invalidPointsSummaryView.alpha = 0.0
+        }, completion: { [weak self] _ in
+            self?.invalidPointsSummaryView.removeFromSuperview()
+        })
     }
     
     func resetExaminationState() {
         smExamination?.closeExamination(removeFiles: true)
         smExamination = nil
         setupExamination()
-    }
-    
-    @IBAction func bodySideChange(_ sender: UISegmentedControl) {
-        guard let newBodySide = SMBodySide(rawValue: sender.selectedSegmentIndex) else { return }
-        smExamination?.showBodySide(newBodySide)
     }
     
     @IBAction func endExaminationTapped() {
@@ -132,13 +136,17 @@ class ViewController: UIViewController {
 // MARK: - SetupUI
 extension ViewController {
     func setupUI() {
+        let recordingStateView = SMRecordingStateView.fromNib()
+        recordingStateView.configure(withLocale: Locale.current)
+        recordingStateView.embed(inView: recordingStateContainer)
+        self.recordingStateView = recordingStateView
+        
         let examinationView = SMExaminationView.fromNib()
-        examinationView.configureAsPlaceholder(patientAge: patientAge)
+        examinationView.configureAsPlaceholder(patientAge: patientAge, locale: Locale.current, customButton: nil)
         examinationView.embed(inView: examinationViewContainer)
         self.examinationView = examinationView
         
         updateProgressView.isHidden = true
-        tooLoudLabel.isHidden = true
         pointsAnalysisIndicatorView.isHidden = true
     }
 }
@@ -248,7 +256,6 @@ extension ViewController: SMExaminationDelegate {
     
     func recordingFinished() {
         print("Recording finished.")
-        tooLoudLabel.isHidden = true
     }
     
     func recordingTooShort() {
@@ -272,7 +279,7 @@ extension ViewController: SMExaminationDelegate {
     }
     
     func stethoscopeTooLoudDetected(_ isTooLoud: Bool) {
-        tooLoudLabel.isHidden = !isTooLoud
+        //ignoring
     }
     
     func stethoscopeTooShakyDetected(_ isTooShaky: Bool) {
