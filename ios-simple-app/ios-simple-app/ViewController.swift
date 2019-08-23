@@ -154,7 +154,11 @@ extension ViewController {
 // MARK: - SMAuthDelegate
 extension ViewController: SMAuthDelegate {
     func provideAuthToken() -> SMAuthCredentials {
-        return SMAuthCredentials(vendorToken: "put-yout-token-here", clientID: 42)
+        return SMAuthCredentials(clientToken: "put-your-token-here", clientID: 42)
+    }
+    
+    func provideNewAuthToken(completionHandler: @escaping (SMAuthCredentials?) -> Void) {
+        completionHandler(provideAuthToken()) // TODO (MJ): do proper request to retrieve new token
     }
     
     func authorized() {
