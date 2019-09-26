@@ -1,0 +1,50 @@
+
+// COMMON
+"yes" = "tak";
+"no" = "nie";
+"cancel" = "Anuluj";
+"retry" = "Powtórz";
+
+// DEVICE
+"device_connection_in_progress_title" = "Łączę się ze stetoskopem...";
+
+// EXAMINATION
+"recording_indicator_top_label" = "Przyłóż stetoskop we wskazanym punkcie";
+"recording_indicator_bottom_label" = "Zachowaj ciszę w pomieszczeniu\nOddychaj naturalnie i głęboko";
+"alert_sending_error_title" = "Błąd wysyłania";
+"alert_sending_error_message" = "Wystąpił błąd podczas wysyłania punktów do analizy. Spróbuj ponownie później.";
+"body_side_front" = "PRZÓD";
+"body_side_back" = "TYŁ";
+
+// INVALID POINTS
+"invalid_points_repeat" = "Czy chcesz powtórzyć punkty z błędem?";
+"invalid_points_hint" = "Pamiętaj o naturalnym głębokim oddechu\ni zachowaniu ciszy w pomieszczeniu.";
+"invalid_points_invalid_first_line" = "W %d punktach dźwięk jest za słabej jakości.";
+"invalid_points_invalid_second_line" = "Nie wykryto oddechu lub jest zbyt dużo zakłóceń.";
+"invalid_points_no_recordings" = "%d punktów nie zostało nagranych.";
+
+// CONSENTS
+"consent_confirm_button_title" = "POTWIERDZAM";
+"consent_dont_show_again" = "Nie pokazuj więcej tego komunikatu.";
+
+// END EXAMINATION BUTTON
+"end_examination_button_title" = "ZAKOŃCZ I ZWERYFIKUJ";
+
+// SUMMARY
+"summary_invalid" = "Nie można określić wyniku badania";
+"summary_no_changes" = "Nie wykryto nieprawidłowych dźwięków osłuchowych";
+"summary_innocent_changes" = "Wykryto niewielką liczbę nieprawidłowych dźwięków osłuchowych";
+"summary_serious_changes" = "Wykryto nieprawidłowe dźwięki osłuchowe";
+
+// LEGEND
+"legend_not_recorded_item" = "nie nagrano dźwięku";
+"legend_recorded_item" = "nagrano dźwięk";
+"legend_invalid_item" = "BŁĄD - zbyt słaba jakość sygnału (Nie wykryto oddechu lub jest zbyt dużo zakłóceń)";
+"legend_valid_item" = "Poprawne nagranie";
+"legend_no_changes_item" = "nie wykryto nieprawidłowych dźwięków osłuchowych";
+"legend_innocent_changes_item" = "wykryto niewielką liczbę nieprawidłowych dźwięków osłuchowych";
+"legend_serious_changes_item" = "wykryto nieprawidłowe dźwięki osłuchowe";
+"legend_wheezes" = "świsty";
+"legend_rhonchi" = "furczenia";
+"legend_coarse_crackles" = "rzężenia\ndrobnobańkowe";
+"legend_fine_crackles" = "rzężenia\ngrubobańkowe";

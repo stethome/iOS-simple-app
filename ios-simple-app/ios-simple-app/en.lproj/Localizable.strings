@@ -1,0 +1,50 @@
+
+// COMMON
+"yes" = "yes";
+"no" = "no";
+"cancel" = "Cancel";
+"retry" = "Retry";
+
+// DEVICE
+"device_connection_in_progress_title" = "Connecting to stethoscope...";
+
+// EXAMINATION
+"recording_indicator_top_label" = "Place the stethoscope at the indicated point";
+"recording_indicator_bottom_label" = "Keep silence in the room\nBreathe deeply and naturally";
+"alert_sending_error_title" = "Sending erorr";
+"alert_sending_error_message" = "Error occured during sending points for analysis. Try again later.";
+"body_side_front" = "FRONT";
+"body_side_back" = "BACK";
+
+// INVALID POINTS
+"invalid_points_repeat" = "Do you want to repeat invalid points?";
+"invalid_points_hint" = "Keep in mind deep breaths\nand keeping room silent.";
+"invalid_points_invalid_first_line" = "In %d points sound have too low quality.";
+"invalid_points_invalid_second_line" = "Breath not detected or there is too much noise.";
+"invalid_points_no_recordings" = "%d points were not recorded.";
+
+// CONSENTS
+"consent_confirm_button_title" = "I CONFIRM";
+"consent_dont_show_again" = "Do not show this message again.";
+
+// END EXAMINATION BUTTON
+"end_examination_button_title" = "FINISH AND VERIFY";
+
+// SUMMARY
+"summary_invalid" = "Examination result can not be determined";
+"summary_no_changes" = "No auscultatory changes detected";
+"summary_innocent_changes" = "Small number of auscultatory changes detected";
+"summary_serious_changes" = "Auscultatory changes detected";
+
+// LEGEND
+"legend_not_recorded_item" = "not recorded";
+"legend_recorded_item" = "recorded";
+"legend_invalid_item" = "ERROR - low signal quality (Breath not detected or too much noise)";
+"legend_valid_item" = "Valid recording";
+"legend_no_changes_item" = "no auscultatory changes detected";
+"legend_innocent_changes_item" = "small number of auscultatory changes detected";
+"legend_serious_changes_item" = "auscultatory changes detected";
+"legend_wheezes" = "wheezes";
+"legend_rhonchi" = "rhonchi";
+"legend_coarse_crackles" = "coarse\ncrackles";
+"legend_fine_crackles" = "fine\ncrackles";
