@@ -41,6 +41,6 @@ private extension DeviceSearchingIndicator {
     func setupTitle() {
         title.font = .systemFont(ofSize: 18, weight: .light)
         title.textColor = Constants.Colors.StethoMeDarkText
-        title.text = "device_connection_in_progress_title".localized
+        title.text = "dialog_connect_in_progress_title".localized
     }
 }

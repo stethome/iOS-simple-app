@@ -1,0 +1,55 @@
+
+// COMMON
+"cancel" = "Abbrechen";
+"retry" = "Wiederholen";
+
+// DEVICE
+"dialog_connect_in_progress_title" = "Ich verbinde mich mit dem Stethoskop...";
+
+// EXAMINATION
+"examination_header_not_recording" = "Lege das Stethoskop an den angezeigten Punkt an";
+"examination_subheader" = "Ermutige den Patienten, tief zu atmen, im Raum soll man Ruhe bewahren";
+"upload_failed_title" = "Übertragung fehlgeschlagen";
+"upload_failed_message" = "Es ist ein Fehler bei der Übertragung von Daten zum Server aufgetreten.";
+"examination_front" = "VORN";
+"examination_back" = "HINTEN";
+
+// INVALID POINTS
+"summary_title_redo_wrong_points" = "Möchten Sie die Aufnahme an den fehlerhaften Stellen wiederholen?";
+"summary_subtitle_redo_wrong_points" = "Denken Sie daran, natürlich aber tief zu atmen und sicherzustellen, dass der Raum still ist.";
+"summary_error_not_recorded_one" = "%d Stelle wurde nicht aufgezeichnet.";
+"summary_error_not_recorded_few" = "%d Spots wurden nicht aufgenommen.";
+"summary_error_not_recorded_many" = "%d Spots wurden nicht aufgenommen.";
+"summary_error_not_recorded_other" = "%d Spots wurden nicht aufgenommen.";
+"summary_error_rr_or_noise_one" = "Unzureichende Klangqualität bei %d Punkt.";
+"summary_error_rr_or_noise_few" = "Unzureichende Klangqualität an %d Stellen.";
+"summary_error_rr_or_noise_many" = "Unzureichende Klangqualität an %d Stellen.";
+"summary_error_rr_or_noise_other" = "Unzureichende Klangqualität an %d Stellen.";
+"summary_error_rr_or_noise2" = "Keine Atmung oder zu viele Störungen.";
+
+"button_agree" = "Ja";
+"button_disagree" = "Nein";
+
+// CONSENTS
+"consents_button_confirm" = "Bestätigen";
+"consents_check_dont_show_again" = "Diese Nachricht nicht mehr anzeigen.";
+
+// END EXAMINATION BUTTON
+"examination_main_end_examination_button" = "UNTERSUCHUNG ABBRECHEN";
+
+// SUMMARY
+"summary_invalid" = "Untersuchungsergebnis kann nicht ermittelt werden";
+"summary_no_changes" = "Keine auskultatorische Änderungen";
+"summary_innocent_changes" = "Kleine Auffälligkeiten wurden ermittelt";
+"summary_serious_changes" = "Ernste Auffälligkeiten wurden ermittelt";
+
+// LEGEND
+"legend_not_recorded_item" = "nicht aufgenommen";
+"legend_invalid_item" = "analyse ist unmöglich - zu wenig Atemzüge oder übermäßiger Lärm";
+"legend_no_changes_item" = "keine auskultatorische Änderungen";
+"legend_innocent_changes_item" = "kleine Auffälligkeiten wurden ermittelt";
+"legend_serious_changes_item" = "ernste Auffälligkeiten wurden ermittelt";
+"legend_wheezes" = "pfeifen";
+"legend_rhonchi" = "brummen";
+"legend_coarse_crackles" = "grobblasige\nrasselgeräusche";
+"legend_fine_crackles" = "feinblasige\nrasselgeräusche";

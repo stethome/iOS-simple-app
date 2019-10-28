@@ -87,8 +87,8 @@ extension ConsentsViewModel {
         var subHeaderText: String?
         var bodyText: String?
         var itemsToAccept: [SMConsentsElement] = []
-        let buttonTitle = "consent_confirm_button_title".localized
-        let dontShowAgainTitle = "consent_dont_show_again".localized
+        let buttonTitle = "disclaimer_button_title".localized.uppercased()
+        let dontShowAgainTitle = "consents_check_dont_show_again".localized
         let isConfirmButtonEnabled = PublishSubject<Bool>()
     }
     

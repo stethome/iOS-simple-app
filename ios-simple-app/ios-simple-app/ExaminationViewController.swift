@@ -140,7 +140,7 @@ extension ExaminationViewController {
         let retryAction = UIAlertAction(title: "retry".localized, style: .default) { [weak self] _ in
             self?.handleEndExamination()
         }
-        let alertVC = UIAlertController(title: "alert_sending_error_title".localized, message: "alert_sending_error_message".localized, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "upload_failed_title".localized, message: "upload_failed_message".localized, preferredStyle: .alert)
         alertVC.addAction(cancelAction)
         alertVC.addAction(retryAction)
         present(alertVC, animated: true, completion: nil)
@@ -223,11 +223,11 @@ extension ExaminationViewController {
         recordingIndicatorView.embed(inView: recordingStateContainer)
         self.recordingIndicatorView = recordingIndicatorView
         
-        recordingIndicatorTopLabel.text = "recording_indicator_top_label".localized
+        recordingIndicatorTopLabel.text = "examination_header_not_recording".localized
         recordingIndicatorTopLabel.textColor = Constants.Colors.StethoMeAccent
         recordingIndicatorTopLabel.font = .systemFont(ofSize: 19, weight: .medium)
         
-        recordingIndicatorBottomLabel.text = "recording_indicator_bottom_label".localized
+        recordingIndicatorBottomLabel.text = "examination_subheader".localized
         recordingIndicatorBottomLabel.textColor = Constants.Colors.StethoMeDarkText
         recordingIndicatorBottomLabel.font = .systemFont(ofSize: 15, weight: .light)
         
@@ -241,7 +241,7 @@ extension ExaminationViewController {
         self.bodySideSwitch = bodySideSwitch
         
         let endExaminationButton = ExaminationEndButton.fromNib()
-        let endExaminationButtonVM = ExaminationEndButtonViewModel(dependencies: ExaminationEndButtonViewModel.Dependencies(state: .disabled, title: "end_examination_button_title".localized))
+        let endExaminationButtonVM = ExaminationEndButtonViewModel(dependencies: ExaminationEndButtonViewModel.Dependencies(state: .disabled, title: "examination_main_end_examination_button".localized))
         endExaminationButton.configure(with: endExaminationButtonVM)
         endExaminationButton.embed(inView: endExaminationButtonContainer)
         self.endExaminationButtonVM = endExaminationButtonVM

@@ -54,9 +54,9 @@ private extension BodySwitchButton {
     func showSide(_ side: SMBodySide) {
         switch side {
         case .front:
-            bodySideLabel.text = "body_side_front".localized
+            bodySideLabel.text = "examination_front".localized
         case .back:
-            bodySideLabel.text = "body_side_back".localized
+            bodySideLabel.text = "examination_back".localized
         }
     }
 }

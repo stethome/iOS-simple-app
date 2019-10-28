@@ -1,34 +1,41 @@
 
 // COMMON
-"yes" = "yes";
-"no" = "no";
 "cancel" = "Cancel";
 "retry" = "Retry";
 
 // DEVICE
-"device_connection_in_progress_title" = "Connecting to stethoscope...";
+"dialog_connect_in_progress_title" = "Connecting to stethoscope...";
 
 // EXAMINATION
-"recording_indicator_top_label" = "Place the stethoscope at the indicated point";
-"recording_indicator_bottom_label" = "Keep silence in the room\nBreathe deeply and naturally";
-"alert_sending_error_title" = "Sending erorr";
-"alert_sending_error_message" = "Error occured during sending points for analysis. Try again later.";
-"body_side_front" = "FRONT";
-"body_side_back" = "BACK";
+"examination_header_not_recording" = "Place the stethoscope at the indicated point";
+"examination_subheader" = "Keep silence in the room\nBreathe deeply and naturally";
+"upload_failed_title" = "Upload failed";
+"upload_failed_message" = "An error occurred while uploading data to the server.";
+"examination_front" = "FRONT";
+"examination_back" = "BACK";
 
 // INVALID POINTS
-"invalid_points_repeat" = "Do you want to repeat invalid points?";
-"invalid_points_hint" = "Keep in mind deep breaths\nand keeping room silent.";
-"invalid_points_invalid_first_line" = "In %d points sound have too low quality.";
-"invalid_points_invalid_second_line" = "Breath not detected or there is too much noise.";
-"invalid_points_no_recordings" = "%d points were not recorded.";
+"summary_title_redo_wrong_points" = "Do you want to repeat recording at the spots with errors?";
+"summary_subtitle_redo_wrong_points" = "Remember to breathe naturally but deeply and to ensure that the room is silent.";
+"summary_error_not_recorded_one" = "%d spot has not been recorded.";
+"summary_error_not_recorded_few" = "%d spots have not been recorded.";
+"summary_error_not_recorded_many" = "%d spots have not been recorded.";
+"summary_error_not_recorded_other" = "%d spots have not been recorded.";
+"summary_error_rr_or_noise_one" = "Insufficient sound quality at %d spot.";
+"summary_error_rr_or_noise_few" = "Insufficient sound quality at %d spots.";
+"summary_error_rr_or_noise_many" = "Insufficient sound quality at %d spots.";
+"summary_error_rr_or_noise_other" = "Insufficient sound quality at %d spots.";
+"summary_error_rr_or_noise2" = "No breathing detected or too much interference.";
+
+"button_agree" = "Yes";
+"button_disagree" = "No";
 
 // CONSENTS
-"consent_confirm_button_title" = "I CONFIRM";
-"consent_dont_show_again" = "Do not show this message again.";
+"consents_button_confirm" = "I CONFIRM";
+"consents_check_dont_show_again" = "Do not show this message again.";
 
 // END EXAMINATION BUTTON
-"end_examination_button_title" = "FINISH AND VERIFY";
+"examination_main_end_examination_button" = "FINISH AND VERIFY";
 
 // SUMMARY
 "summary_invalid" = "Examination result can not be determined";
@@ -38,9 +45,7 @@
 
 // LEGEND
 "legend_not_recorded_item" = "not recorded";
-"legend_recorded_item" = "recorded";
 "legend_invalid_item" = "ERROR - low signal quality (Breath not detected or too much noise)";
-"legend_valid_item" = "Valid recording";
 "legend_no_changes_item" = "no auscultatory changes detected";
 "legend_innocent_changes_item" = "small number of auscultatory changes detected";
 "legend_serious_changes_item" = "auscultatory changes detected";

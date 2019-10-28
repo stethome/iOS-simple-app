@@ -1,0 +1,55 @@
+
+// COMMON
+"cancel" = "Annuler";
+"retry" = "Répéter";
+
+// DEVICE
+"dialog_connect_in_progress_title" = "Connexion au stéthoscope en cours...";
+
+// EXAMINATION
+"examination_header_not_recording" = "Placez le stéthoscope au point indiqué";
+"examination_subheader" = "Encouragez le patient à respirer profondément, gardez le silence dans la chambre";
+"upload_failed_title" = "L\'envoi a échoué";
+"upload_failed_message" = "Une erreur est survenue lors d\'envoi des données au serveur.";
+"examination_front" = "POITRINE";
+"examination_back" = "DOS";
+
+// INVALID POINTS
+"summary_title_redo_wrong_points" = "Voulez-vous répéter l\'enregistrement sur les points comportant des erreurs?";
+"summary_subtitle_redo_wrong_points" = "N\'oubliez pas de respirer naturellement mais profondément et de veiller à ce que la pièce soit silencieuse.";
+"summary_error_not_recorded_one" = "%d point n\'a pas été enregistré.";
+"summary_error_not_recorded_few" = "%d points n\'ont pas été enregistrés.";
+"summary_error_not_recorded_many" = "%d points n\'ont pas été enregistrés.";
+"summary_error_not_recorded_other" = "%d points n\'ont pas été enregistrés.";
+"summary_error_rr_or_noise_one" = "Qualité sonore insuffisante au niveau du point %d.";
+"summary_error_rr_or_noise_few" = "Qualité sonore insuffisante aux points %d.";
+"summary_error_rr_or_noise_many" = "Qualité sonore insuffisante aux points %d.";
+"summary_error_rr_or_noise_other" = "Qualité sonore insuffisante aux points %d.";
+"summary_error_rr_or_noise2" = "Pas de respiration détectée ou trop d\'interférences.";
+
+"button_agree" = "Oui";
+"button_disagree" = "Non";
+
+// CONSENTS
+"consents_button_confirm" = "confirmez";
+"consents_check_dont_show_again" = "Ne plus afficher ce message.";
+
+// END EXAMINATION BUTTON
+"examination_main_end_examination_button" = "TERMINEZ L\'EXAMEN";
+
+// SUMMARY
+"summary_invalid" = "Impossible de définir le résultat de l\'examen";
+"summary_no_changes" = "Aucun son anormal détecté";
+"summary_innocent_changes" = "Nombre insignifiant/peu important de sons anormaux détectés";
+"summary_serious_changes" = "Sons anormaux détectés - consultation médicale recommandée";
+
+// LEGEND
+"legend_not_recorded_item" = "non enregistré";
+"legend_invalid_item" = "impossible d'analyser - échantillon de respiration insuffisant ou bruit trop important";
+"legend_no_changes_item" = "aucune anomalie détectée à l'auscultation";
+"legend_innocent_changes_item" = "anomalies mineures détectées";
+"legend_serious_changes_item" = "anomalies graves détectées";
+"legend_wheezes" = "sifflement";
+"legend_rhonchi" = "ronchi";
+"legend_coarse_crackles" = "gros\ncrépitants";
+"legend_fine_crackles" = "crépitants\nfins";

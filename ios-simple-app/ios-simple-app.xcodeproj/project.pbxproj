@@ -79,6 +79,8 @@
 		E240A8A5233A4E0100E53A4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E240A8A7233A4E2900E53A4E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E240A8A8233A4F7500E53A4E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		E248F9C52366EF2500B62E7A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E248F9C62366FA3A00B62E7A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E26AA18722F827660080001D /* ios-simple-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-simple-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AA18A22F827660080001D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E26AA18C22F827660080001D /* ExaminationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,8 @@
 				en,
 				Base,
 				pl,
+				de,
+				fr,
 			);
 			mainGroup = E26AA17E22F827660080001D;
 			productRefGroup = E26AA18822F827660080001D /* Products */;
@@ -398,6 +402,8 @@
 			children = (
 				E240A8A5233A4E0100E53A4E /* en */,
 				E240A8A7233A4E2900E53A4E /* pl */,
+				E248F9C52366EF2500B62E7A /* de */,
+				E248F9C62366FA3A00B62E7A /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

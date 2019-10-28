@@ -66,21 +66,21 @@ private extension InvalidPointsSummaryView {
         let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: Constants.Colors.StethoMeAccent,
                                                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .light)]
         
-        let yesTitle = NSAttributedString(string: "yes".localized.uppercased(), attributes: attributes)
+        let yesTitle = NSAttributedString(string: "button_agree".localized.uppercased(), attributes: attributes)
         yesButton.setAttributedTitle(yesTitle, for: .normal)
         
-        let noTitle = NSAttributedString(string: "no".localized.uppercased(), attributes: attributes)
+        let noTitle = NSAttributedString(string: "button_disagree".localized.uppercased(), attributes: attributes)
         noButton.setAttributedTitle(noTitle, for: .normal)
     }
 }
 
 // MARK: - Configuration
 extension InvalidPointsSummaryView {
-    func configure(withInvalidPoints invalidPoints: [SMExaminationPointFailedReason]) {
+    public func configure(withInvalidPoints invalidPoints: [SMExaminationPointFailedReason]) {
         invalidPointsStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         
-        repeatPointsLabel.text = "invalid_points_repeat".localized
-        repeatPointsHintLabel.text = "invalid_points_hint".localized
+        repeatPointsLabel.text = "summary_title_redo_wrong_points".localized
+        repeatPointsHintLabel.text = "summary_subtitle_redo_wrong_points".localized
         setupButtons()
         
         let invalidCount = invalidPoints.filter({ $0 == .notValid }).count
@@ -88,16 +88,36 @@ extension InvalidPointsSummaryView {
         
         if invalidCount > 0 {
             let countView = InvalidPointsCountView.fromNib()
-            countView.configure(with: .invalid(String(format: "invalid_points_invalid_first_line".localized, invalidCount), "invalid_points_invalid_second_line".localized),
+            let text: String
+            switch invalidCount {
+            case 1:
+                text = String(format: "summary_error_rr_or_noise_one".localized, invalidCount)
+            case 2...4:
+                text = String(format: "summary_error_rr_or_noise_few".localized, invalidCount)
+            default:
+                text = String(format: "summary_error_rr_or_noise_other".localized, invalidCount)
+            }
+            countView.configure(with: .invalid(text, "summary_error_rr_or_noise2".localized),
                                 count: invalidCount)
             invalidPointsStackView.addArrangedSubview(countView)
         }
         
         if notRecordedCount > 0 {
             let countView = InvalidPointsCountView.fromNib()
-            countView.configure(with: .noRecording(String(format: "invalid_points_no_recordings".localized, notRecordedCount)),
+            let text: String
+            switch notRecordedCount {
+            case 1:
+                text = String(format: "summary_error_not_recorded_one".localized, notRecordedCount)
+            case 2...4:
+                text = String(format: "summary_error_not_recorded_few".localized, notRecordedCount)
+            default:
+                text = String(format: "summary_error_not_recorded_other".localized, notRecordedCount)
+            }
+            
+            countView.configure(with: .noRecording(text),
                                 count: notRecordedCount)
             invalidPointsStackView.addArrangedSubview(countView)
         }
     }
 }
+
