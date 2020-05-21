@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E224F93822F8295E002474B8 /* StethoMeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E224F93722F8295E002474B8 /* StethoMeSDK.framework */; };
-		E224F93922F8295E002474B8 /* StethoMeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E224F93722F8295E002474B8 /* StethoMeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E221480F24768BC0006F15D0 /* StethoMeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */; };
+		E221481024768BC0006F15D0 /* StethoMeSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E221481324768BCF006F15D0 /* StethoMeTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E221481224768BCF006F15D0 /* StethoMeTools.xcframework */; };
+		E221481424768BCF006F15D0 /* StethoMeTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E221481224768BCF006F15D0 /* StethoMeTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E224F93C22F836A7002474B8 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224F93B22F836A7002474B8 /* UIView+Embed.swift */; };
 		E240A88B233A045500E53A4E /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240A88A233A045500E53A4E /* RingView.swift */; };
 		E240A891233A32B100E53A4E /* ExaminationEndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240A88E233A32B100E53A4E /* ExaminationEndButton.swift */; };
@@ -50,13 +52,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E224F93A22F8295E002474B8 /* Embed Frameworks */ = {
+		E221481124768BC0006F15D0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E224F93922F8295E002474B8 /* StethoMeSDK.framework in Embed Frameworks */,
+				E221481424768BCF006F15D0 /* StethoMeTools.xcframework in Embed Frameworks */,
+				E221481024768BC0006F15D0 /* StethoMeSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E224F93722F8295E002474B8 /* StethoMeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StethoMeSDK.framework; sourceTree = "<group>"; };
+		E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StethoMeSDK.xcframework; sourceTree = "<group>"; };
+		E221481224768BCF006F15D0 /* StethoMeTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StethoMeTools.xcframework; sourceTree = "<group>"; };
 		E224F93B22F836A7002474B8 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
 		E240A88A233A045500E53A4E /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		E240A88E233A32B100E53A4E /* ExaminationEndButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExaminationEndButton.swift; sourceTree = "<group>"; };
@@ -115,13 +119,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E224F93822F8295E002474B8 /* StethoMeSDK.framework in Frameworks */,
+				E221481324768BCF006F15D0 /* StethoMeTools.xcframework in Frameworks */,
+				E221480F24768BC0006F15D0 /* StethoMeSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E221480D24768BC0006F15D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E221481224768BCF006F15D0 /* StethoMeTools.xcframework */,
+				E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E240A88D233A32B100E53A4E /* ExaminationEndButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +170,9 @@
 		E26AA17E22F827660080001D = {
 			isa = PBXGroup;
 			children = (
-				E224F93722F8295E002474B8 /* StethoMeSDK.framework */,
 				E26AA18922F827660080001D /* ios-simple-app */,
 				E26AA18822F827660080001D /* Products */,
+				E221480D24768BC0006F15D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,7 +305,7 @@
 				E26AA18322F827660080001D /* Sources */,
 				E26AA18422F827660080001D /* Frameworks */,
 				E26AA18522F827660080001D /* Resources */,
-				E224F93A22F8295E002474B8 /* Embed Frameworks */,
+				E221481124768BC0006F15D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

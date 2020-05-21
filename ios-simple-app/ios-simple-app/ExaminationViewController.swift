@@ -90,7 +90,7 @@ extension ExaminationViewController {
     func setupExamination() {
         guard smExamination == nil, let consents = Database.instance.getConsents() else { return }
         
-        let patient = SMPatient(age: Float(patientAge), sex: .male, weight: 80)
+        let patient = SMPatient(age: Float(patientAge), sex: .male, weight: 80, height: 170, birthDateTs: nil)
         let config = SMLungsExaminationConfig(auscultationMode: .simple, //only simple mode supported for now
                                               serverMode: .resultSimple, //highest AI analysis available now is simple result
                                               patient: patient,

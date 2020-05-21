@@ -32,7 +32,6 @@
 
 // CONSENTS
 "consents_button_confirm" = "I CONFIRM";
-"consents_check_dont_show_again" = "Do not show this message again.";
 
 // END EXAMINATION BUTTON
 "examination_main_end_examination_button" = "FINISH AND VERIFY";

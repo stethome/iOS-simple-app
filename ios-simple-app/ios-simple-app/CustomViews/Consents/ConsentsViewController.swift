@@ -95,10 +95,10 @@ private extension ConsentsViewController {
         consentsStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         
         for index in 0..<items.count {
-            addNewConsent(accepted: items[index].isAccepted, text: items[index].acceptStringKeyResource.getString(for: Locale.current))
+            addNewConsent(accepted: items[index].isAccepted, text: items[index].acceptStringKeyResource.getString(for: Locale.current, forDoctor: false))
         }
         
-        addNewConsent(accepted: false, text: viewModel.output.view.dontShowAgainTitle)
+        addNewConsent(accepted: false, text: viewModel.output.view.dontShowAgainTitle ?? "")
     }
     
     func addNewConsent(accepted: Bool, text: String) {

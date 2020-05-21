@@ -32,7 +32,6 @@
 
 // CONSENTS
 "consents_button_confirm" = "Bestätigen";
-"consents_check_dont_show_again" = "Diese Nachricht nicht mehr anzeigen.";
 
 // END EXAMINATION BUTTON
 "examination_main_end_examination_button" = "UNTERSUCHUNG ABBRECHEN";

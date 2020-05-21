@@ -29,13 +29,14 @@ final class ConsentsViewModel {
     private func setupTexts() {
         let smConsents = SMManager.getConsents()
         let stringRes = SMStringResource(locale: Locale.current)
-        let headerText = stringRes.getString(for: smConsents.headerStringKey)
-        let subHeaderText = stringRes.getString(for: smConsents.subHeaderStringKey)
-        let bodytext = stringRes.getString(for: smConsents.bodyStringKey)
-        
+        let headerText = stringRes.getConsentString(for: smConsents.headerStringKey, forDoctor: false)
+        let subHeaderText = stringRes.getConsentString(for: smConsents.subHeaderStringKey, forDoctor: false)
+        let bodytext = stringRes.getConsentString(for: smConsents.bodyStringKey, forDoctor: false)
+        let dontShowAgainText = stringRes.getConsentString(for: .consentDontShowAgain, forDoctor: false)
         output.view.headerText = headerText
         output.view.subHeaderText = subHeaderText
         output.view.bodyText = bodytext
+        output.view.dontShowAgainTitle = dontShowAgainText
     }
 }
 
@@ -87,8 +88,8 @@ extension ConsentsViewModel {
         var subHeaderText: String?
         var bodyText: String?
         var itemsToAccept: [SMConsentsElement] = []
-        let buttonTitle = "disclaimer_button_title".localized.uppercased()
-        let dontShowAgainTitle = "consents_check_dont_show_again".localized
+        let buttonTitle = "consents_button_confirm".localized.uppercased()
+        var dontShowAgainTitle: String?
         let isConfirmButtonEnabled = PublishSubject<Bool>()
     }
     
