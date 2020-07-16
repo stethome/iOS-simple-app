@@ -14,8 +14,7 @@ public protocol NibLoadableView: class {
 
 extension NibLoadableView where Self: UIView {
     public static func fromNib() -> Self {
-        let sdkBundle = Bundle(for: ExaminationViewController.self)
-        let view = sdkBundle.loadNibNamed(String(describing: self), owner: nil, options: nil)
+        let view = Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)
         return view?[0] as! Self
     }
 }

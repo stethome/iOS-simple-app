@@ -1,5 +1,5 @@
 //
-//  ExaminationViewController.swift
+//  LungsExaminationViewController.swift
 //  ios-simple-app
 //
 //  Created by Maciej Jurgielanis on 05/08/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import StethoMeSDK
 
-class ExaminationViewController: UIViewController {
+class LungsExaminationViewController: UIViewController, Presenter {
     
     @IBOutlet weak var recordingStateContainer: UIView!
     @IBOutlet weak var recordingIndicatorTopLabel: UILabel!
@@ -76,7 +76,7 @@ class ExaminationViewController: UIViewController {
 }
 
 // MARK: - Examination
-extension ExaminationViewController {
+extension LungsExaminationViewController {
     
     func setupStethoMe() {
         // You can add your class that will be receiving logger events directly from StethoMeSDK. If you do, then setting loggerVerbosity is necessary too.
@@ -123,7 +123,7 @@ extension ExaminationViewController {
                 print("Analysis done with general state: \(result.state).")
                 
                 if result.invalidPoints.count == 0 {
-                    self?.showResultsView(withResult: result)
+                    self?.openResultsView(withResult: result)
                 } else {
                     self?.smExaminationResult = result
                     self?.handleShowingInvalidPoints(result.invalidPoints)
@@ -154,7 +154,7 @@ extension ExaminationViewController {
 }
 
 // MARK: - Invalid points
-extension ExaminationViewController {
+extension LungsExaminationViewController {
     func handleShowingInvalidPoints(_ invalidPoints: [Int: SMExaminationPointFailedReason]) {
         invalidPointsSummaryView.configure(withInvalidPoints: invalidPoints.map({ $0.1 }))
         invalidPointsSummaryView.embed(inView: self.view)
@@ -186,7 +186,7 @@ extension ExaminationViewController {
             //if user doesn't want to record invalid points again, just show results of visit
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
                 guard let result = self?.smExaminationResult else { return }
-                self?.showResultsView(withResult: result)
+                self?.openResultsView(withResult: result)
             })
         }
         
@@ -204,20 +204,8 @@ extension ExaminationViewController {
     }
 }
 
-// MARK: - Result
-extension ExaminationViewController {
-    func showResultsView(withResult result: SMLungsExaminationResult) {
-        if let resultVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
-            resultVC.lungsExaminationResult = result
-            resultVC.patientAge = patientAge
-            
-            navigationController?.pushViewController(resultVC, animated: true)
-        }
-    }
-}
-
 // MARK: - SetupUI
-extension ExaminationViewController {
+extension LungsExaminationViewController {
     func setupUI() {
         let recordingIndicatorView = SMRecordingIndicatorView.fromNib()
         recordingIndicatorView.embed(inView: recordingStateContainer)
@@ -277,10 +265,9 @@ extension ExaminationViewController {
 }
 
 // MARK: - SMAuthDelegate
-extension ExaminationViewController: SMAuthDelegate {
+extension LungsExaminationViewController: SMAuthDelegate {
     func provideAuthToken() -> SMAuthCredentials {
-        // TODO (MJ): IN PRODUCTION APP, PUT 'YOUR' TOKEN HERE. THIS IS JUST FOR TESTING PURPOSES. ANY VISITS MADE USING THIS TOKEN COULD BE REMOVED AT ANY TIME.
-        return SMAuthCredentials(clientToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjkzMjIwOTQsInR5cGUiOiJ2ZW5kb3IiLCJ2ZW5kb3JfaWQiOiJGb29CYXIiLCJ2ZW5kb3IiOiJGb29CYXIiLCJqdGkiOiI1ZDg5ZjQ2ZTUyZTczIn0.70mQDvWC_RkZZbdcwhLoRihUYTD9dwMv8uFBFQzY8QAhM5wmfRcgf5ISKsQXTu_jVCI6oJkGLOyYA82QiD7k1w", clientID: 42)
+        return SMAuthCredentials(clientToken: Constants.clientToken, clientID: 42)
     }
     
     func provideNewAuthToken(completionHandler: @escaping (SMAuthCredentials?) -> Void) {
@@ -298,7 +285,7 @@ extension ExaminationViewController: SMAuthDelegate {
 }
 
 // MARK: - SMManagerDelegate
-extension ExaminationViewController: SMManagerDelegate {
+extension LungsExaminationViewController: SMManagerDelegate {
     func stethoscopesFound(_ devices: [SMStethoscope]) {
         print("Found: \(devices)")
         guard let first = devices.first else { return }
@@ -324,7 +311,7 @@ extension ExaminationViewController: SMManagerDelegate {
         showSearchingIndicator(false)
         
         switch checkResult.state {
-        case .updateRequired:
+        case .updateRequired, .recoveryNeeded:
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             let updateAction = UIAlertAction(title: "Update", style: .default) { [weak checkResult] _ in
                 checkResult?.startFirmwareUpdate(progressDelegate: self)
@@ -344,7 +331,7 @@ extension ExaminationViewController: SMManagerDelegate {
 }
 
 // MARK: - SMUpdateProgressDelegate
-extension ExaminationViewController: SMUpdateProgressDelegate {
+extension LungsExaminationViewController: SMUpdateProgressDelegate {
     func firmwareUpdate(progress: Float) {
         print("Firmware update progress: \(progress)%")
     }
@@ -360,7 +347,7 @@ extension ExaminationViewController: SMUpdateProgressDelegate {
 }
 
 // MARK: - SMExaminationDelegate
-extension ExaminationViewController: SMExaminationDelegate {
+extension LungsExaminationViewController: SMExaminationDelegate {
     func recordingStarted() {
         print("Started recording.")
     }
@@ -407,7 +394,7 @@ extension ExaminationViewController: SMExaminationDelegate {
 }
 
 // MARK: - SMLoggerDelegate
-extension ExaminationViewController: SMLoggerDelegate {
+extension LungsExaminationViewController: SMLoggerDelegate {
     func onLogReceive(logText: String) {
         print(logText)
     }

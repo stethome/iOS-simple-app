@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E206593024C05D1800AF21D2 /* CustomExaminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E206592F24C05D1800AF21D2 /* CustomExaminationViewController.swift */; };
 		E221480F24768BC0006F15D0 /* StethoMeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */; };
 		E221481024768BC0006F15D0 /* StethoMeSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E221481324768BCF006F15D0 /* StethoMeTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E221481224768BCF006F15D0 /* StethoMeTools.xcframework */; };
@@ -24,8 +25,10 @@
 		E240A8A1233A4AED00E53A4E /* ConsentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240A89E233A4AED00E53A4E /* ConsentsViewModel.swift */; };
 		E240A8A4233A4E0100E53A4E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E240A8A6233A4E0100E53A4E /* Localizable.strings */; };
 		E240A8A9233A4F7500E53A4E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240A8A8233A4F7500E53A4E /* String+Localized.swift */; };
+		E24333DA24BEF1A50099F933 /* ExaminationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24333D924BEF1A50099F933 /* ExaminationView.xib */; };
+		E24333DC24BEF1CE0099F933 /* ExaminationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24333DB24BEF1CE0099F933 /* ExaminationView.swift */; };
 		E26AA18B22F827660080001D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26AA18A22F827660080001D /* AppDelegate.swift */; };
-		E26AA18D22F827660080001D /* ExaminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26AA18C22F827660080001D /* ExaminationViewController.swift */; };
+		E26AA18D22F827660080001D /* LungsExaminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26AA18C22F827660080001D /* LungsExaminationViewController.swift */; };
 		E26AA19022F827660080001D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26AA18E22F827660080001D /* Main.storyboard */; };
 		E26AA19222F827670080001D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26AA19122F827670080001D /* Assets.xcassets */; };
 		E26AA19522F827670080001D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26AA19322F827670080001D /* LaunchScreen.storyboard */; };
@@ -49,6 +52,11 @@
 		E2DFEDEC233B602000A6DEE2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DFEDEB233B602000A6DEE2 /* View.swift */; };
 		E2DFEDF0233B789F00A6DEE2 /* BodySwitchButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DFEDEE233B789F00A6DEE2 /* BodySwitchButton.xib */; };
 		E2DFEDF1233B789F00A6DEE2 /* BodySwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DFEDEF233B789F00A6DEE2 /* BodySwitchButton.swift */; };
+		E2E2288024C044D600D6D372 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2287F24C044D600D6D372 /* Presenter.swift */; };
+		E2E2288224C045AA00D6D372 /* UIStoryboard+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2288124C045AA00D6D372 /* UIStoryboard+Init.swift */; };
+		E2E2288424C048E600D6D372 /* ChooseExaminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2288324C048E600D6D372 /* ChooseExaminationViewController.swift */; };
+		E2E2D09024BF10C100CFE343 /* ExaminationPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E2D08F24BF10C100CFE343 /* ExaminationPointCell.xib */; };
+		E2E2D09224BF113D00CFE343 /* ExaminationPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2D09124BF113D00CFE343 /* ExaminationPointCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E206592F24C05D1800AF21D2 /* CustomExaminationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomExaminationViewController.swift; sourceTree = "<group>"; };
 		E221480E24768BC0006F15D0 /* StethoMeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StethoMeSDK.xcframework; sourceTree = "<group>"; };
 		E221481224768BCF006F15D0 /* StethoMeTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StethoMeTools.xcframework; sourceTree = "<group>"; };
 		E224F93B22F836A7002474B8 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
@@ -83,11 +92,13 @@
 		E240A8A5233A4E0100E53A4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E240A8A7233A4E2900E53A4E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E240A8A8233A4F7500E53A4E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		E24333D924BEF1A50099F933 /* ExaminationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExaminationView.xib; sourceTree = "<group>"; };
+		E24333DB24BEF1CE0099F933 /* ExaminationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationView.swift; sourceTree = "<group>"; };
 		E248F9C52366EF2500B62E7A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E248F9C62366FA3A00B62E7A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E26AA18722F827660080001D /* ios-simple-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-simple-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AA18A22F827660080001D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E26AA18C22F827660080001D /* ExaminationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationViewController.swift; sourceTree = "<group>"; };
+		E26AA18C22F827660080001D /* LungsExaminationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LungsExaminationViewController.swift; sourceTree = "<group>"; };
 		E26AA18F22F827660080001D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E26AA19122F827670080001D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26AA19422F827670080001D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +123,11 @@
 		E2DFEDEB233B602000A6DEE2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E2DFEDEE233B789F00A6DEE2 /* BodySwitchButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodySwitchButton.xib; sourceTree = "<group>"; };
 		E2DFEDEF233B789F00A6DEE2 /* BodySwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodySwitchButton.swift; sourceTree = "<group>"; };
+		E2E2287F24C044D600D6D372 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		E2E2288124C045AA00D6D372 /* UIStoryboard+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Init.swift"; sourceTree = "<group>"; };
+		E2E2288324C048E600D6D372 /* ChooseExaminationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExaminationViewController.swift; sourceTree = "<group>"; };
+		E2E2D08F24BF10C100CFE343 /* ExaminationPointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExaminationPointCell.xib; sourceTree = "<group>"; };
+		E2E2D09124BF113D00CFE343 /* ExaminationPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationPointCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +169,7 @@
 				E240A897233A360200E53A4E /* BehaviorSubject.swift */,
 				E2DFEDE4233B3F8E00A6DEE2 /* Database.swift */,
 				E2DFEDEB233B602000A6DEE2 /* View.swift */,
+				E2E2287F24C044D600D6D372 /* Presenter.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -165,6 +182,16 @@
 				E240A89E233A4AED00E53A4E /* ConsentsViewModel.swift */,
 			);
 			path = Consents;
+			sourceTree = "<group>";
+		};
+		E24333D824BEE1210099F933 /* CustomExaminationView */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2D08E24BF10A000CFE343 /* CustomExaminationPoint */,
+				E24333D924BEF1A50099F933 /* ExaminationView.xib */,
+				E24333DB24BEF1CE0099F933 /* ExaminationView.swift */,
+			);
+			path = CustomExaminationView;
 			sourceTree = "<group>";
 		};
 		E26AA17E22F827660080001D = {
@@ -187,12 +214,11 @@
 		E26AA18922F827660080001D /* ios-simple-app */ = {
 			isa = PBXGroup;
 			children = (
+				E2E2287E24C041E100D6D372 /* ViewControllers */,
 				E26E511E2338ECCB00DF6AF3 /* CustomViews */,
 				E240A894233A334C00E53A4E /* Base */,
 				E26E51312339484100DF6AF3 /* Extensions */,
 				E26E512F2339483400DF6AF3 /* Constants.swift */,
-				E26AA18C22F827660080001D /* ExaminationViewController.swift */,
-				E240A899233A497600E53A4E /* ResultViewController.swift */,
 				E26AA18A22F827660080001D /* AppDelegate.swift */,
 				E26AA18E22F827660080001D /* Main.storyboard */,
 				E26AA19122F827670080001D /* Assets.xcassets */,
@@ -206,6 +232,7 @@
 		E26E511E2338ECCB00DF6AF3 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E24333D824BEE1210099F933 /* CustomExaminationView */,
 				E291F55D233B997100DFA076 /* LegendItemView */,
 				E291F558233B930200DFA076 /* UploadingIndicator */,
 				E2DFEDED233B789F00A6DEE2 /* BodySwitchButton */,
@@ -246,6 +273,7 @@
 				E224F93B22F836A7002474B8 /* UIView+Embed.swift */,
 				E26E512D2339465600DF6AF3 /* NibLoadableView.swift */,
 				E240A8A8233A4F7500E53A4E /* String+Localized.swift */,
+				E2E2288124C045AA00D6D372 /* UIStoryboard+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +321,26 @@
 				E2DFEDEF233B789F00A6DEE2 /* BodySwitchButton.swift */,
 			);
 			path = BodySwitchButton;
+			sourceTree = "<group>";
+		};
+		E2E2287E24C041E100D6D372 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2288324C048E600D6D372 /* ChooseExaminationViewController.swift */,
+				E26AA18C22F827660080001D /* LungsExaminationViewController.swift */,
+				E206592F24C05D1800AF21D2 /* CustomExaminationViewController.swift */,
+				E240A899233A497600E53A4E /* ResultViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E2E2D08E24BF10A000CFE343 /* CustomExaminationPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2D08F24BF10C100CFE343 /* ExaminationPointCell.xib */,
+				E2E2D09124BF113D00CFE343 /* ExaminationPointCell.swift */,
+			);
+			path = CustomExaminationPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +409,7 @@
 				E26AA19522F827670080001D /* LaunchScreen.storyboard in Resources */,
 				E26AA19222F827670080001D /* Assets.xcassets in Resources */,
 				E26AA19022F827660080001D /* Main.storyboard in Resources */,
+				E24333DA24BEF1A50099F933 /* ExaminationView.xib in Resources */,
 				E2C09E10233AABB1004A690A /* GenericContainer.xib in Resources */,
 				E2DFEDF0233B789F00A6DEE2 /* BodySwitchButton.xib in Resources */,
 				E291F560233B997100DFA076 /* LegendItemView.xib in Resources */,
@@ -368,6 +417,7 @@
 				E26E512823393DB400DF6AF3 /* InvalidPointsCountView.xib in Resources */,
 				E240A8A4233A4E0100E53A4E /* Localizable.strings in Resources */,
 				E26E512923393DB400DF6AF3 /* InvalidPointsSummaryView.xib in Resources */,
+				E2E2D09024BF10C100CFE343 /* ExaminationPointCell.xib in Resources */,
 				E240A8A0233A4AED00E53A4E /* Consents.storyboard in Resources */,
 				E291F55C233B930200DFA076 /* UploadingIndicator.xib in Resources */,
 			);
@@ -383,7 +433,9 @@
 				E2DFEDEA233B5FCE00A6DEE2 /* DeviceSearchingIndicator.swift in Sources */,
 				E240A8A9233A4F7500E53A4E /* String+Localized.swift in Sources */,
 				E240A88B233A045500E53A4E /* RingView.swift in Sources */,
+				E206593024C05D1800AF21D2 /* CustomExaminationViewController.swift in Sources */,
 				E291F55B233B930200DFA076 /* UploadingIndicator.swift in Sources */,
+				E2E2288224C045AA00D6D372 /* UIStoryboard+Init.swift in Sources */,
 				E240A896233A335900E53A4E /* PublishSubject.swift in Sources */,
 				E240A891233A32B100E53A4E /* ExaminationEndButton.swift in Sources */,
 				E2C09E0F233AABB1004A690A /* GenericContainer.swift in Sources */,
@@ -395,13 +447,17 @@
 				E26E512A23393DB400DF6AF3 /* PoweredByStethoMeLabel.swift in Sources */,
 				E224F93C22F836A7002474B8 /* UIView+Embed.swift in Sources */,
 				E240A8A1233A4AED00E53A4E /* ConsentsViewModel.swift in Sources */,
-				E26AA18D22F827660080001D /* ExaminationViewController.swift in Sources */,
+				E26AA18D22F827660080001D /* LungsExaminationViewController.swift in Sources */,
+				E24333DC24BEF1CE0099F933 /* ExaminationView.swift in Sources */,
 				E26AA18B22F827660080001D /* AppDelegate.swift in Sources */,
 				E291F561233B997100DFA076 /* LegendItemView.swift in Sources */,
 				E240A898233A360200E53A4E /* BehaviorSubject.swift in Sources */,
+				E2E2288424C048E600D6D372 /* ChooseExaminationViewController.swift in Sources */,
 				E26E512B23393DB400DF6AF3 /* InvalidPointsSummaryView.swift in Sources */,
 				E2DFEDF1233B789F00A6DEE2 /* BodySwitchButton.swift in Sources */,
+				E2E2288024C044D600D6D372 /* Presenter.swift in Sources */,
 				E26E512723393DB400DF6AF3 /* InvalidPointsCountView.swift in Sources */,
+				E2E2D09224BF113D00CFE343 /* ExaminationPointCell.swift in Sources */,
 				E2DFEDE5233B3F8E00A6DEE2 /* Database.swift in Sources */,
 				E2DFEDEC233B602000A6DEE2 /* View.swift in Sources */,
 				E26E51302339483400DF6AF3 /* Constants.swift in Sources */,
